@@ -36,22 +36,21 @@ CSV.foreach(Rails.root.join('lib/exhibit_seeds.csv'), headers: true) do |row|
   exhibit.image.attach(io: File.open(Rails.root.join('lib/seed-images').join(row["Image Filename"])), filename: row["Image Filename"], content_type: "image/png") 
 end
 
-#Create reviews - need to figure this out
-i = 1
-10.times do 
-  r = Review.create(
-    name: Faker::Internet.username(specifier: 6..9),
-    content: Faker::Lorem.paragraph(sentence_count: 4)
-  )
-
-  filename = "review_#{i}.png"
-  c.image.attach(io: File.open(image_root.join(filename)), filename: filename, content_type: "image/png")
-  i += 1
-end
-Rails.root.join('lib/seed-images').join(row["Image Filename"])), filename: row["Image Filename"]
-
-
 #Create Attractions
 CSV.foreach(Rails.root.join('lib/attraction_seeds.csv'), headers: true) do |row|
   Attraction.create!(name: row["Name"], zone_id: row["Zone ID"])
+end
+
+# Create reviews 
+i = 1
+10.times do 
+  r = Review.create(
+    username: Faker::Internet.username(specifier: 6..9),
+    content: Faker::Lorem.paragraph(sentence_count: 4),
+    rating: [1,2,3,3,4,4,4,5,5,5,5].sample
+  )
+
+  filename = "review_#{i}.png"
+  r.image.attach(io: File.open(Rails.root.join('lib/seed-images').join(filename)), filename: filename, content_type: "image/png")
+  i += 1
 end
