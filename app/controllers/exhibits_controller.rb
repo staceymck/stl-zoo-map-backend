@@ -3,9 +3,9 @@ class ExhibitsController < ApplicationController
 
   # GET /exhibits
   def index
-    @exhibits = Exhibit.all
+    @exhibits = Exhibit.all.includes(image_attachment: :blob) #avoids n + 1 query
 
-    render json: @exhibits
+    render json: @exhibits, include: [:exhibit_image]
   end
 
   # GET /exhibits/1
