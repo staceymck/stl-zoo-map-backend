@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    @reviews = Review.all
+    @reviews = Review.all.includes(image_attachment: :blob)
 
     render json: @reviews
   end
