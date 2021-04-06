@@ -1,6 +1,6 @@
 class ReviewSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :username, :rating, :content, :review_image
+  attributes :id, :username, :rating, :content, :review_image, :date
 
   def review_image
     if object.image.attached?
@@ -9,4 +9,8 @@ class ReviewSerializer < ActiveModel::Serializer
       }
     end
   end 
+
+  def date
+    object.created_at.strftime("%m/%d/%Y")
+  end
 end
