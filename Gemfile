@@ -19,6 +19,10 @@ gem 'puma', '~> 4.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Pagination
+gem 'kaminari'
+gem 'api-pagination'
+
 gem 'cloudinary'
 gem 'active_model_serializers'
 
