@@ -3,7 +3,10 @@
 ## Description
 This repo serves as the backend for a simple interactive map based on St. Louis Zoo. Site visitors can click on map zones to view information about that zone's exhibits and attractions. 
 
-[Frontend Repo](https://github.com/staceymck/stl-zoo-map-frontend)
+[Frontend Repo](https://github.com/staceymck/stl-zoo-map-frontend) (Readme contains screenshots)
+
+## Technology
+This app uses a Rails API backend with HTML, CSS and object-oriented JavaScript on the frontend. Images are stored with [Cloudinary](https://cloudinary.com/) and attached to database records via [Active Storage](https://edgeguides.rubyonrails.org/active_storage_overview.html).
 
 ## Data & Asset Sources
 Zoo data is based on information available on the [St. Louis Zoo website](https://www.stlzoo.org/).
