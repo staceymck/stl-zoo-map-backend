@@ -4,7 +4,7 @@ require 'csv'
 zones_data = [
   {
     name: "Discovery Corner",
-    description: "Enjoy up close encounters with animals in our children's zoo area and a butterfly house in our insectarium."
+    description: "Experience nature and history up close inside our insectarium and the new Dinoroarus encounter area."
   },
   {
     name: "Historic Hill",
